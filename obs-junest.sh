@@ -58,6 +58,8 @@ if ! test -d "$HOME/.local/share/junest"; then
 	sed -i 's/#SigLevel/SigLevel/g' ./.junest/etc/pacman.conf
 	sed -i 's/Required DatabaseOptional/Never/g' ./.junest/etc/pacman.conf
 
+	echo "Server = https://arch-archive.tuna.tsinghua.edu.cn/2023/07-17/$repo/os/$arch" > ./.junest/etc/pacman.d/mirrorlist
+	
 	# UPDATE ARCH LINUX IN JUNEST
 	./.local/share/junest/bin/junest -- sudo pacman -Syy
 	./.local/share/junest/bin/junest -- sudo pacman --noconfirm -Syu
