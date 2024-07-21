@@ -52,7 +52,7 @@ if ! test -d "$HOME/.local/share/junest"; then
 		wget -q https://archlinux.org/mirrorlist/all/ -O - | awk NR==2 RS= | sed 's/#Server/Server/g' >> ./.junest/etc/pacman.d/mirrorlist # ENABLES WORLDWIDE MIRRORS
 		#wget -q https://archlinux.org/mirrorlist/?country="$(echo $COUNTRY)" -O - | sed 's/#Server/Server/g' >> ./.junest/etc/pacman.d/mirrorlist # ENABLES MIRRORS OF YOUR COUNTY
 	}
-	_custom_mirrorlist
+	#_custom_mirrorlist
 
 	# BYPASS SIGNATURE CHECK LEVEL
 	sed -i 's/#SigLevel/SigLevel/g' ./.junest/etc/pacman.conf
