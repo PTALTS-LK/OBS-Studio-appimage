@@ -61,8 +61,7 @@ if ! test -d "$HOME/.local/share/junest"; then
 	echo "Server = https://archive.archlinux.org/repos/2023/07/17/$repo/os/$arch" > ./.junest/etc/pacman.d/mirrorlist
 	
 	# UPDATE ARCH LINUX IN JUNEST
-	./.local/share/junest/bin/junest -- sudo pacman -Syy
-	./.local/share/junest/bin/junest -- sudo pacman --noconfirm -Syu
+	./.local/share/junest/bin/junest -- sudo pacman --noconfirm -Syyuu
 else
 	cd ..
 	rsync -av ./junest-backups/* ./$APP.AppDir/.junest/
